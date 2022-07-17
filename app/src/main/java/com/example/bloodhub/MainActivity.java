@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView registernow, forgotpassword;
     private EditText editTextEmail, editTextPassword;
-    private Button login;
+    private Button login,getData;
 
     private FirebaseAuth mAuth;
 
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         registernow.setOnClickListener(this);
 
         login = (Button) findViewById(R.id.loginbtn);
+        getData = (Button) findViewById(R.id.getData);
         login.setOnClickListener(this);
 
         editTextEmail = (EditText) findViewById(R.id.email);
@@ -46,6 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         forgotpassword = (TextView) findViewById(R.id.forgotpassword);
         forgotpassword.setOnClickListener(this);
 
+        getData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,BloodData.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
