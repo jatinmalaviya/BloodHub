@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView registernow, forgotpassword;
     private EditText editTextEmail, editTextPassword;
-    private Button login,getData;
+    private Button login;
 
     private FirebaseAuth mAuth;
 
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         registernow.setOnClickListener(this);
 
         login = (Button) findViewById(R.id.loginbtn);
-        getData = (Button) findViewById(R.id.getData);
         login.setOnClickListener(this);
 
         editTextEmail = (EditText) findViewById(R.id.email);
@@ -47,13 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         forgotpassword = (TextView) findViewById(R.id.forgotpassword);
         forgotpassword.setOnClickListener(this);
 
-        getData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,BloodData.class);
-                startActivity(i);
-            }
-        });
     }
 
     @Override
@@ -65,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.loginbtn:
                 //Log.d("info", "working");
-               //startActivity(new Intent(this, Registeryourself.class));
+               //startActivity(new Intent(this, Selectactivity.class));
                 userLogin();
                 break;
 
@@ -113,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if(user.isEmailVerified()) {
-                        startActivity(new Intent(MainActivity.this, Registeryourself.class));
+                        startActivity(new Intent(MainActivity.this, Selectactivity.class));
                         //Log.d("info", "working");
                     }
                     else{

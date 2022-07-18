@@ -121,7 +121,7 @@ public class Registeryourself extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(Registeryourself.this,"Your Data has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Registeryourself.this, UserProfile.class));
+                startActivity(new Intent(Registeryourself.this, MainActivity.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
